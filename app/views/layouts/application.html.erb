@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MAHS</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">MAHS</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/browse/weather">Weather</a></li>
+        <li><a href="http://mail.google.com/a/mtairy.k12.nc.us">Staff Email</a></li>
+        <li><a href="https://mtairy.powerschool.com/teachers/pw.html" target="_blank">PowerTeacher</a></li>
+        <li><a href="https://mtairy.powerschool.com/admin/pw.html" target="_blank">PowerSchool Admin</a></li>
+
+		<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students <span class="caret"></span></a>
+	    <ul class="dropdown-menu" role="menu">
+	      <li><a href="#">Bells Schedule</a></li>
+	      <li><a href="#">Clubs</a></li>
+	      <li><a href="#">Dress Code</a></li>
+	      <li><a href="#">Dress Code Memo From MAHS</a></li>
+	      <li><a href="#">Drivers &amp; Traffic</a></li>
+	      <li><a href="#">eLearning NC</a></li>
+	      <li><a href="#">F4K/Crusing</a></li>
+	      <li><a href="#">Honor Code &amp; Cheating Policy</a></li>
+	      <li><a href="#">Naviance-Family Connection</a></li>
+	      <li><a href="#">NC Graduation Requirements</a></li>
+	      <li><a href="#">Supply List for All Courses</a></li>
+	      <li><a href="#">Student Automobiles Policy</a></li>
+	      <li><a href="#">Stu Usernames / Passwords</a></li>
+	  	</ul>
+     </li>
+
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Parents <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Athletic Physical Forms</a></li>
+            <li><a href="#">AIG Plans</a></li>
+            <li><a href="#">Attendance Policy - MACS</a></li>
+            <li><a href="#">Attendance / Tardy Procedures - MACS</a></li>
+            <li><a href="#">Discipline Policy</a></li>
+            <li><a href="#">Dress Code Memo from MAHS</a></li>
+            <li><a href="#">Family Resource Center</a></li>
+            <li><a href="#">Graduation Requirements</a></li>
+            <li><a href="#">Lunch Pre-pay</a></li>
+            <li><a href="#">MAHS Grading Practicies</a></li>
+            <li><a href="#">PTO</a></li>
+            <li><a href="#">Parent Registration</a></li>
+            <li><a href="#">Powerschool Parent</a></li>
+          </ul>
+        </li>
+
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Staff <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">C Core / Essential Standards</a></li>
+        <li><a href="#">Staff Directory</a></li>
+        <li><a href="#">SchoolFusion Grades</a></li>
+        <li><a href="#">Technology Repair Request</a></li>
+        <li><a href="#">MAHS Staff Handbook (Condensed)</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Class Pages</a></li>
+    <li><a href="http://macs.schoolfusion.us/?sessionid=bbebb53ab67e1088f2ebcec5799e874b&amp;t">District Home</a></li>
+  </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container super_container body">
+<%= yield %>
+
+<footer class='footer'>
+  <hr />
+  <% if Time.now.year == 2014 %>
+  	&copy; 2014 Elijah Ray Smith</a>
+  <% else %>
+  	&copy; 2014-<%= Time.now.year %> Elijah Ray Smith</a>
+  <% end %>
+
+</footer>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<% @announcements.each do |announcement| %>
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    <%= announcement.text_content %>
+	    <hr/>
+	    <p><%= announcement.created_at.to_easy_time %></p>
+	  </div>
+	</div>
+<% end %>
+
