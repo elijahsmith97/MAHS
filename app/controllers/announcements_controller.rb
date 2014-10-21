@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:serve]
 
   # GET /announcements
   # GET /announcements.json
@@ -17,6 +18,11 @@ class AnnouncementsController < ApplicationController
     @announcement = Announcement.new
   end
 
+  def serve
+    @announcement = Announcement.find(params[:id])
+    send_data(@announcement.data, :type => @announcement.mime_type, :filename => "#{@announcement.filename}.jpg", :disposition => "inline")
+  end
+
   # GET /announcements/1/edit
   def edit
   end
@@ -28,6 +34,13 @@ class AnnouncementsController < ApplicationController
 
     respond_to do |format|
       if @announcement.save
+        if !params[:picture].blank?
+          @announcement.data      = params[:picture].read
+          @announcement.filename  = params[:picture].original_filename
+          @announcement.mime_type = params[:picture].content_type
+          @announcement.save!
+        end
+
         format.html { redirect_to @announcement, notice: 'Announcement was successfully created.' }
         format.json { render :show, status: :created, location: @announcement }
       else

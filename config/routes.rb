@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  resources :announcements
+  devise_for :users
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+  end
 
+  resources :announcements do
+    get "serve", :on => :member
+  end
+  get 'browse/c_core'
+  get 'browse/athletic'
+  get 'browse/bell_schedules'
   get 'browse/weather'
   get 'browse/home'
   root 'browse#home'

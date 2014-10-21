@@ -32,7 +32,7 @@
 		<li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students <span class="caret"></span></a>
 	    <ul class="dropdown-menu" role="menu">
-	      <li><a href="#">Bells Schedule</a></li>
+	      <li><a href="/browse/bell_schedules">Bells Schedule</a></li>
 	      <li><a href="#">Clubs</a></li>
 	      <li><a href="#">Dress Code</a></li>
 	      <li><a href="#">Dress Code Memo From MAHS</a></li>
@@ -51,7 +51,7 @@
 		<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Parents <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Athletic Physical Forms</a></li>
+            <li><a href="http://macs.schoolfusion.us/modules/cms/pages.phtml?pageid=161795&sessionid=67fe2336c92e719e2c02530555053390&t=78fe120cc2f44eedba403d87a2c65b79&sessionid=67fe2336c92e719e2c02530555053390&t=78fe120cc2f44eedba403d87a2c65b79">Athletic Physical Forms</a></li>
             <li><a href="#">AIG Plans</a></li>
             <li><a href="#">Attendance Policy - MACS</a></li>
             <li><a href="#">Attendance / Tardy Procedures - MACS</a></li>
@@ -70,7 +70,8 @@
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Staff <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="#">C Core / Essential Standards</a></li>
+        <li><a href="/browse/c_core">C Core / Essential Standards</a></li>
+
         <li><a href="#">Staff Directory</a></li>
         <li><a href="#">SchoolFusion Grades</a></li>
         <li><a href="#">Technology Repair Request</a></li>
@@ -80,6 +81,12 @@
 
     <li><a href="#">Class Pages</a></li>
     <li><a href="http://macs.schoolfusion.us/?sessionid=bbebb53ab67e1088f2ebcec5799e874b&amp;t">District Home</a></li>
+    <% if current_user.nil? %>
+      <li><a href="/announcements">Sign In</a></li>
+    <% else %>
+      <li><a href="/logout">Sign Out</a></li>
+      <li><a href="/announcements">Announcements</a></li>
+    <% end %>
   </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -1,6 +1,6 @@
-<h1>Listing announcements</h1>
+<h1>Listing Announcements</h1>
 
-<table>
+<table class="table table-condensed table-striped table-bordered table-clickable">
   <thead>
     <tr>
       <th>Text content</th>
@@ -8,7 +8,7 @@
       <th>Filename</th>
       <th>Mime type</th>
       <th>User</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -20,9 +20,8 @@
         <td><%= announcement.filename %></td>
         <td><%= announcement.mime_type %></td>
         <td><%= announcement.user_id %></td>
-        <td><%= link_to 'Show', announcement %></td>
         <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-        <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Announcement', new_announcement_path %>
+<%= link_to 'New Announcement', new_announcement_path, :class => "btn btn-success" %>

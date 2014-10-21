@@ -1,5 +1,5 @@
 class BrowseController < ApplicationController
   def home
-  	@announcements = Announcement.all
+  	@announcements = Announcement.order("created_at DESC")
   end
 end

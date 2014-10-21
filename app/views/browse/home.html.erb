@@ -1,4 +1,6 @@
 <% @announcements.each do |announcement| %>
+
+	<% if announcement.data.nil? or announcement.data == "" %>
 	<div class="panel panel-default">
 	  <div class="panel-body">
 	    <%= announcement.text_content %>
@@ -6,5 +8,14 @@
 	    <p><%= announcement.created_at.to_easy_time %></p>
 	  </div>
 	</div>
+	<% else %>
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    <%= image_tag serve_announcement_path(announcement.id), :style => "height: 150px;" %>
+	    <hr/>
+	    <p><%= announcement.created_at.to_easy_time %></p>
+	  </div>
+	</div>
+	<% end %>
 <% end %>
 
