@@ -23,6 +23,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',                              group: :doc
 
 gem 'devise'
+
+gem "jruby-openssl", :require => false
+gem "jruby-jars", "1.7.16.1"
+gem "jruby-pageant", "~> 1.1.1"
+gem "jruby-rack", "~> 1.1.13.2"
+gem 'warbler', '1.4.4'
+gem "rubyzip", "0.9.8"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
